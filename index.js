@@ -4,13 +4,13 @@ import { createRoot } from 'react-dom/client';
 function MyButton() {
   return (
     <button>I'm a button</button>
-  )
+  );
 }
 
 function CreatingAndNestingComponents() {
   return (
     <MyButton />
-  )
+  );
 }
 
 function WritingMarkupWithJSX() {
@@ -18,13 +18,13 @@ function WritingMarkupWithJSX() {
     <>
       <p>This is an empty wrapper</p>
     </>
-  )
+  );
 }
 
 function AddingStyles() {
   return (
     <img className="avatar" src="https://avatars.githubusercontent.com/u/7974?v=4" />
-  )
+  );
 }
 
 let App = function MyApp() {
