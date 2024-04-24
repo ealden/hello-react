@@ -50,6 +50,36 @@ function DisplayingData() {
   );
 }
 
+function AdminPanel() {
+  return (
+    <p>Admin Panel goes here</p>
+  );
+}
+
+function LoginForm() {
+  return (
+    <p>Login Form goes here</p>
+  );
+}
+
+function ConditionalRendering() {
+  let isLoggedIn = true;
+
+  let content;
+
+  if (isLoggedIn) {
+    content = <AdminPanel />
+  } else {
+    content = <LoginPanel />
+  }
+
+  return (
+    <div>
+      {content}
+    </div>
+  );
+}
+
 let App = function MyApp() {
   return (
     <div>
@@ -62,6 +92,8 @@ let App = function MyApp() {
       <AddingStyles />
       <h2>Displaying Data</h2>
       <DisplayingData />
+      <h2>Conditional Rendering</h2>
+      <ConditionalRendering />
     </div>
   );
 }
