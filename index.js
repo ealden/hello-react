@@ -27,6 +27,29 @@ function AddingStyles() {
   );
 }
 
+function DisplayingData() {
+  const user = {
+    name: 'Ealden Escañan',
+    imageUrl: 'https://avatars.githubusercontent.com/u/7974?v=4',
+    imageSize: 90
+  };
+
+  return (
+    <>
+      <h3>{user.name}</h3>
+      <img
+        className="avatar"
+        src={user.imageUrl}
+        alt={'Photo of ' + user.name}
+        style={{
+          width: user.imageSize,
+          height: user.imageSize
+        }}
+      />
+    </>
+  );
+}
+
 let App = function MyApp() {
   return (
     <div>
@@ -37,6 +60,8 @@ let App = function MyApp() {
       <WritingMarkupWithJSX />
       <h2>Adding Styles</h2>
       <AddingStyles />
+      <h2>Displaying Data</h2>
+      <DisplayingData />
     </div>
   );
 }
