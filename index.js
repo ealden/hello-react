@@ -182,6 +182,31 @@ function UsingHooks() {
   );
 }
 
+function SharingDataBetweenComponents() {
+  function MyButton({count, onClick}) {
+    return (
+      <button onClick={onClick}>
+        Clicked {count} times
+      </button>
+    );
+  }
+
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <>
+      <h2>Sharing Data Between Components</h2>
+      <MyButton count={count} onClick={handleClick} />
+      <br />
+      <MyButton count={count} onClick={handleClick} />
+    </>
+  );
+}
+
 let App = function MyApp() {
   return (
     <div>
@@ -195,6 +220,7 @@ let App = function MyApp() {
       <RespondingToEvents />
       <UpdatingTheScreen />
       <UsingHooks />
+      <SharingDataBetweenComponents />
     </div>
   );
 }
