@@ -98,6 +98,18 @@ function RenderingLists() {
   );
 }
 
+function RespondingToEvents() {
+  function handleClick() {
+    alert('You clicked me!');
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Click me
+    </button>
+  );
+}
+
 let App = function MyApp() {
   return (
     <div>
@@ -114,6 +126,8 @@ let App = function MyApp() {
       <ConditionalRendering />
       <h2>Rendering Lists</h2>
       <RenderingLists />
+      <h2>Responding to Events</h2>
+      <RespondingToEvents />
     </div>
   );
 }
