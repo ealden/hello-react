@@ -21,6 +21,12 @@ function WritingMarkupWithJSX() {
   )
 }
 
+function AddingStyles() {
+  return (
+    <img className="avatar" src="https://avatars.githubusercontent.com/u/7974?v=4" />
+  )
+}
+
 let App = function MyApp() {
   return (
     <div>
@@ -29,6 +35,8 @@ let App = function MyApp() {
       <CreatingAndNestingComponents />
       <h2>Writing Markup with JSX</h2>
       <WritingMarkupWithJSX />
+      <h2>Adding Styles</h2>
+      <AddingStyles />
     </div>
   );
 }
