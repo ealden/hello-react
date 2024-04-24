@@ -125,6 +125,30 @@ function UpdatingTheScreen() {
   );
 }
 
+function UsingHooks() {
+  function MyButton() {
+    const [count, setCount] = useState(0);
+
+    function handleClick() {
+      setCount(count + 1);
+    }
+
+    return (
+      <button onClick={handleClick}>
+        Clicked {count} times
+      </button>
+    );
+  }
+
+  return (
+    <>
+      <MyButton />
+      <br />
+      <MyButton />
+    </>
+  );
+}
+
 let App = function MyApp() {
   return (
     <div>
@@ -145,6 +169,8 @@ let App = function MyApp() {
       <RespondingToEvents />
       <h2>Updating the Screen</h2>
       <UpdatingTheScreen />
+      <h2>Using Hooks</h2>
+      <UsingHooks />
     </div>
   );
 }
