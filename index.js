@@ -1,5 +1,6 @@
 import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { useState } from 'react';
 
 function CreatingAndNestingComponents() {
   function MyButton() {
@@ -110,6 +111,20 @@ function RespondingToEvents() {
   );
 }
 
+function UpdatingTheScreen() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Clicked {count} times
+    </button>
+  );
+}
+
 let App = function MyApp() {
   return (
     <div>
@@ -128,6 +143,8 @@ let App = function MyApp() {
       <RenderingLists />
       <h2>Responding to Events</h2>
       <RespondingToEvents />
+      <h2>Updating the Screen</h2>
+      <UpdatingTheScreen />
     </div>
   );
 }
