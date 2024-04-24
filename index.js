@@ -10,13 +10,17 @@ function CreatingAndNestingComponents() {
   }
 
   return (
-    <MyButton />
+    <>
+      <h2>Creating and Nesting Components</h2>
+      <MyButton />
+    </>
   );
 }
 
 function WritingMarkupWithJSX() {
   return (
     <>
+      <h2>Writing Markup with JSX</h2>
       <p>This is an empty wrapper</p>
     </>
   );
@@ -24,7 +28,10 @@ function WritingMarkupWithJSX() {
 
 function AddingStyles() {
   return (
-    <img className="avatar" src="https://avatars.githubusercontent.com/u/7974?v=4" />
+    <>
+      <h2>Adding Styles</h2>
+      <img className="avatar" src="https://avatars.githubusercontent.com/u/7974?v=4" />
+    </>
   );
 }
 
@@ -37,6 +44,7 @@ function DisplayingData() {
 
   return (
     <>
+      <h2>Displaying Data</h2>
       <h3>{user.name}</h3>
       <img
         className="avatar"
@@ -75,9 +83,12 @@ function ConditionalRendering() {
   }
 
   return (
-    <div>
-      {content}
-    </div>
+    <>
+      <h2>Conditional Rendering</h2>
+      <div>
+        {content}
+      </div>
+    </>
   );
 }
 
@@ -95,33 +106,54 @@ function RenderingLists() {
   );
 
   return (
-    <ul>{listItems}</ul>
+    <>
+      <h2>Rendering Lists</h2>
+      <ul>{listItems}</ul>
+    </>
   );
 }
 
 function RespondingToEvents() {
-  function handleClick() {
-    alert('You clicked me!');
+  function MyButton() {
+    function handleClick() {
+      alert('You clicked me!');
+    }
+
+    return (
+      <button onClick={handleClick}>
+        Click me
+      </button>
+    );
   }
 
   return (
-    <button onClick={handleClick}>
-      Click me
-    </button>
+    <>
+      <h2>Responding to Events</h2>
+      <MyButton />
+    </>
   );
 }
 
 function UpdatingTheScreen() {
-  const [count, setCount] = useState(0);
+  function MyButton() {
+    const [count, setCount] = useState(0);
 
-  function handleClick() {
-    setCount(count + 1);
+    function handleClick() {
+      setCount(count + 1);
+    }
+
+    return (
+      <button onClick={handleClick}>
+        Clicked {count} times
+      </button>
+    );
   }
 
   return (
-    <button onClick={handleClick}>
-      Clicked {count} times
-    </button>
+    <>
+      <h2>Updating the Screen</h2>
+      <MyButton />
+    </>
   );
 }
 
@@ -142,6 +174,7 @@ function UsingHooks() {
 
   return (
     <>
+      <h2>Using Hooks</h2>
       <MyButton />
       <br />
       <MyButton />
@@ -153,23 +186,14 @@ let App = function MyApp() {
   return (
     <div>
       <h1>Hello, React!</h1>
-      <h2>Creating and Nesting Components</h2>
       <CreatingAndNestingComponents />
-      <h2>Writing Markup with JSX</h2>
       <WritingMarkupWithJSX />
-      <h2>Adding Styles</h2>
       <AddingStyles />
-      <h2>Displaying Data</h2>
       <DisplayingData />
-      <h2>Conditional Rendering</h2>
       <ConditionalRendering />
-      <h2>Rendering Lists</h2>
       <RenderingLists />
-      <h2>Responding to Events</h2>
       <RespondingToEvents />
-      <h2>Updating the Screen</h2>
       <UpdatingTheScreen />
-      <h2>Using Hooks</h2>
       <UsingHooks />
     </div>
   );
