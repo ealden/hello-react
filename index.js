@@ -1,13 +1,13 @@
 import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
-function MyButton() {
-  return (
-    <button>I'm a button</button>
-  );
-}
-
 function CreatingAndNestingComponents() {
+  function MyButton() {
+    return (
+      <button>I'm a button</button>
+    );
+  }
+
   return (
     <MyButton />
   );
@@ -50,19 +50,19 @@ function DisplayingData() {
   );
 }
 
-function AdminPanel() {
-  return (
-    <p>Admin Panel goes here</p>
-  );
-}
-
-function LoginForm() {
-  return (
-    <p>Login Form goes here</p>
-  );
-}
-
 function ConditionalRendering() {
+  function AdminPanel() {
+    return (
+      <p>Admin Panel goes here</p>
+    );
+  }
+
+  function LoginForm() {
+    return (
+      <p>Login Form goes here</p>
+    );
+  }
+
   let isLoggedIn = true;
 
   let content;
