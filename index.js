@@ -80,6 +80,24 @@ function ConditionalRendering() {
   );
 }
 
+function RenderingLists() {
+  const products = [
+    { id: 1, title: 'Cabbage' },
+    { id: 2, title: 'Garlic' },
+    { id: 3, title: 'Apple' }
+  ];
+
+  const listItems = products.map(product =>
+    <li key={product.id}>
+      {product.title}
+    </li>
+  );
+
+  return (
+    <ul>{listItems}</ul>
+  );
+}
+
 let App = function MyApp() {
   return (
     <div>
@@ -94,6 +112,8 @@ let App = function MyApp() {
       <DisplayingData />
       <h2>Conditional Rendering</h2>
       <ConditionalRendering />
+      <h2>Rendering Lists</h2>
+      <RenderingLists />
     </div>
   );
 }
